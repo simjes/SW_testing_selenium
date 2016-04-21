@@ -1,0 +1,126 @@
+2016-04-21 13:06:19 [info] Playing test case Registernewcustomer
+2016-04-21 13:06:19 [info] Executing: |open | /4.7.9/ |  |
+2016-04-21 13:06:21 [info] Executing: |clickAndWait | link=Sign In |  |
+2016-04-21 13:06:22 [info] Executing: |clickAndWait | css=button.btn.btn-default |  |
+2016-04-21 13:06:23 [info] Executing: |store | javascript{"jonasdoe" + Math.floor(Math.random() * 1000) + "@heimeil.com"} | new_user_email |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][Email] | ${new_user_email} |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][Password] | swtst |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][RePassword] | swtst |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][FirstName] | Simon |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][LastName] | Jespersen |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][ZipCode] | 4444 |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][City] | oslo |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][Streetline1] | lol |
+2016-04-21 13:06:23 [info] Executing: |type | name=customer_info[Customer][Phone] | 9999999 |
+2016-04-21 13:06:23 [info] Executing: |clickAndWait | //input[@value='Register'] |  |
+2016-04-21 13:06:25 [info] Executing: |assertElementPresent | css=div.note.note-success |  |
+2016-04-21 13:06:25 [info] Executing: |clickAndWait | link=Sign Out |  |
+2016-04-21 13:06:27 [info] Executing: |clickAndWait | css=a.site-logo |  |
+2016-04-21 13:06:28 [info] Test case passed
+2016-04-21 13:06:28 [info] Playing test case Login
+2016-04-21 13:06:28 [info] Executing: |open | /4.7.9/index.php |  |
+2016-04-21 13:06:30 [info] Executing: |clickAndWait | link=Sign In |  |
+2016-04-21 13:06:31 [info] Executing: |type | id=account_sign_in_form_email_id | ${new_user_email} |
+2016-04-21 13:06:31 [info] Executing: |type | id=account_sign_in_form_passwd_id | swtst |
+2016-04-21 13:06:31 [info] Executing: |clickAndWait | //input[@value='Sign In'] |  |
+2016-04-21 13:06:33 [info] Executing: |assertText | css=h1 | My Account Welcome,Simon   Sign Out |
+2016-04-21 13:06:33 [info] Executing: |assertLocation | http://demo.avactis.com/4.7.9/home.php |  |
+2016-04-21 13:06:33 [info] Test case passed
+2016-04-21 13:06:33 [info] Playing test case Change password
+2016-04-21 13:06:33 [info] Executing: |open | /4.7.9/home.php |  |
+2016-04-21 13:06:34 [info] Executing: |clickAndWait | link=Change Password |  |
+2016-04-21 13:06:36 [info] Executing: |assertElementPresent | id=account_change_password_form_current_password_id |  |
+2016-04-21 13:06:36 [info] Executing: |assertElementPresent | id=account_change_password_form_new_password_id |  |
+2016-04-21 13:06:36 [info] Executing: |assertElementPresent | id=account_change_password_form_retype_password_id |  |
+2016-04-21 13:06:36 [info] Executing: |type | id=account_change_password_form_current_password_id | swtst |
+2016-04-21 13:06:36 [info] Executing: |type | id=account_change_password_form_new_password_id | swtst2 |
+2016-04-21 13:06:36 [info] Executing: |type | id=account_change_password_form_retype_password_id | swtst2 |
+2016-04-21 13:06:36 [info] Executing: |clickAndWait | //input[@value='Continue'] |  |
+2016-04-21 13:06:37 [info] Executing: |assertElementPresent | css=div.note.note-success |  |
+2016-04-21 13:06:37 [info] Test case passed
+2016-04-21 13:06:37 [info] Playing test case Select products
+2016-04-21 13:06:37 [info] Executing: |open | /4.7.9/index.php |  |
+2016-04-21 13:06:39 [info] Executing: |clickAndWait | //img[@alt='DVD'] |  |
+2016-04-21 13:06:40 [info] Executing: |clickAndWait | xpath=(//a[contains(text(),'Kids DVDs')])[3] |  |
+2016-04-21 13:06:41 [info] Executing: |click | xpath=(//input[@value='Add To Cart'])[2] |  |
+2016-04-21 13:06:41 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:06:44 [info] Executing: |clickAndWait | css=a.site-logo |  |
+2016-04-21 13:06:46 [info] Executing: |clickAndWait | css=div.subcategory_img.pi-img-wrapper > a > img.img-responsive |  |
+2016-04-21 13:06:48 [info] Executing: |clickAndWait | xpath=(//a[contains(text(),'Details')])[4] |  |
+2016-04-21 13:06:49 [info] Executing: |select | name=po[37] | label=2XL |
+2016-04-21 13:06:49 [info] Executing: |assertSelectedLabel | name=po[37] | 2XL |
+2016-04-21 13:06:49 [info] Executing: |select | name=quantity_in_cart | label=3 |
+2016-04-21 13:06:49 [info] Executing: |assertSelectedLabel | name=quantity_in_cart | 3 |
+2016-04-21 13:06:49 [info] Executing: |click | //input[@value='Add To Cart'] |  |
+2016-04-21 13:06:49 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:06:52 [info] Executing: |clickAndWait | css=a.site-logo |  |
+2016-04-21 13:06:54 [info] Executing: |clickAndWait | //img[@alt='Sport'] |  |
+2016-04-21 13:06:55 [info] Executing: |click | //input[@value='Add To Cart'] |  |
+2016-04-21 13:06:55 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:06:58 [info] Executing: |clickAndWait | css=a.site-logo |  |
+2016-04-21 13:06:59 [info] Executing: |clickAndWait | //img[@alt='Computers'] |  |
+2016-04-21 13:07:01 [info] Executing: |clickAndWait | xpath=(//a[contains(text(),'Desktops')])[3] |  |
+2016-04-21 13:07:02 [info] Executing: |clickAndWait | css=#ProductForm_15 > div.product_img.pi-img-wrapper > a > img.img-responsive |  |
+2016-04-21 13:07:03 [info] Executing: |click | //input[@value='Add To Cart'] |  |
+2016-04-21 13:07:03 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:07:03 [info] Test case passed
+2016-04-21 13:07:03 [info] Playing test case Look at cart
+2016-04-21 13:07:04 [info] Executing: |open | /4.7.9/index.php |  |
+2016-04-21 13:07:06 [info] Executing: |clickAndWait | link=My cart |  |
+2016-04-21 13:07:07 [info] Executing: |assertElementPresent | name=quantity_in_cart[0] |  |
+2016-04-21 13:07:07 [info] Executing: |assertElementPresent | name=quantity_in_cart[1] |  |
+2016-04-21 13:07:07 [info] Executing: |assertElementPresent | name=quantity_in_cart[2] |  |
+2016-04-21 13:07:07 [info] Executing: |assertElementPresent | name=quantity_in_cart[3] |  |
+2016-04-21 13:07:07 [info] Test case passed
+2016-04-21 13:07:07 [info] Playing test case Continue shopping
+2016-04-21 13:07:07 [info] Executing: |open | /4.7.9/cart.php |  |
+2016-04-21 13:07:09 [info] Executing: |clickAndWait | link=Continue Shopping |  |
+2016-04-21 13:07:10 [info] Executing: |clickAndWait | css=a.site-logo |  |
+2016-04-21 13:07:12 [info] Executing: |clickAndWait | link=Digital Distribution |  |
+2016-04-21 13:07:13 [info] Executing: |click | xpath=(//input[@value='Add To Cart'])[3] |  |
+2016-04-21 13:07:13 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:07:16 [info] Executing: |clickAndWait | css=a.site-logo |  |
+2016-04-21 13:07:18 [info] Executing: |clickAndWait | xpath=(//a[contains(text(),'Details')])[9] |  |
+2016-04-21 13:07:19 [info] Executing: |select | name=quantity_in_cart | label=7 |
+2016-04-21 13:07:19 [info] Executing: |click | //input[@value='Add To Cart'] |  |
+2016-04-21 13:07:19 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:07:19 [info] Test case passed
+2016-04-21 13:07:19 [info] Playing test case Change quantity
+2016-04-21 13:07:19 [info] Executing: |open | /4.7.9/cart.php |  |
+2016-04-21 13:07:21 [info] Executing: |assertElementPresent | name=quantity_in_cart[0] |  |
+2016-04-21 13:07:21 [info] Executing: |assertElementPresent | name=quantity_in_cart[1] |  |
+2016-04-21 13:07:21 [info] Executing: |assertElementPresent | name=quantity_in_cart[2] |  |
+2016-04-21 13:07:21 [info] Executing: |assertElementPresent | name=quantity_in_cart[3] |  |
+2016-04-21 13:07:21 [info] Executing: |assertElementPresent | name=quantity_in_cart[4] |  |
+2016-04-21 13:07:22 [info] Executing: |assertElementPresent | name=quantity_in_cart[5] |  |
+2016-04-21 13:07:22 [info] Executing: |selectAndWait | name=quantity_in_cart[1] | label=7 |
+2016-04-21 13:07:25 [info] Executing: |selectAndWait | name=quantity_in_cart[5] | label=23 |
+2016-04-21 13:07:28 [info] Executing: |assertSelectedLabel | name=quantity_in_cart[1] | 7 |
+2016-04-21 13:07:28 [info] Executing: |assertSelectedLabel | name=quantity_in_cart[5] | 23 |
+2016-04-21 13:07:28 [info] Executing: |clickAndWait | //form[@id='Product_Quan']/table/tbody/tr[4]/td[6]/a |  |
+2016-04-21 13:07:30 [info] Executing: |assertElementPresent | name=quantity_in_cart[0] |  |
+2016-04-21 13:07:30 [info] Executing: |assertElementPresent | name=quantity_in_cart[1] |  |
+2016-04-21 13:07:30 [info] Executing: |assertElementPresent | name=quantity_in_cart[2] |  |
+2016-04-21 13:07:30 [info] Executing: |assertElementPresent | name=quantity_in_cart[3] |  |
+2016-04-21 13:07:30 [info] Executing: |assertElementPresent | name=quantity_in_cart[4] |  |
+2016-04-21 13:07:30 [info] Test case passed
+2016-04-21 13:07:30 [info] Playing test case Place order
+2016-04-21 13:07:30 [info] Executing: |open | /4.7.9/cart.php |  |
+2016-04-21 13:07:32 [info] Executing: |clickAndWait | css=div.form-group > a.btn.btn-primary |  |
+2016-04-21 13:07:34 [info] Executing: |click | name=checkbox_shipping_same_as_billing |  |
+2016-04-21 13:07:34 [info] Executing: |click | //input[@value='Continue Checkout'] |  |
+2016-04-21 13:07:34 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:07:37 [info] Executing: |assertElementPresent | name=shippingModuleAndMethod[method_code] |  |
+2016-04-21 13:07:37 [info] Executing: |click | name=shippingModuleAndMethod[method_code] |  |
+2016-04-21 13:07:37 [info] Executing: |assertChecked | name=shippingModuleAndMethod[method_code] |  |
+2016-04-21 13:07:37 [info] Executing: |click | xpath=(//input[@value='Continue Checkout'])[2] |  |
+2016-04-21 13:07:37 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:07:40 [info] Executing: |clickAndWait | //input[@value='Place Order'] |  |
+2016-04-21 13:07:41 [info] Executing: |pause | 3000 |  |
+2016-04-21 13:07:44 [info] Executing: |assertElementPresent | //div[4]/div/div/div/div/div/div/div/div/div |  |
+2016-04-21 13:07:44 [info] Test case passed
+2016-04-21 13:07:44 [info] Playing test case Logout
+2016-04-21 13:07:44 [info] Executing: |open | /4.7.9/order_placed.php?asc_action=SetCurrStep/step_id=4 |  |
+2016-04-21 13:07:46 [info] Executing: |clickAndWait | link=Sign Out |  |
+2016-04-21 13:07:48 [info] Test case passed
+2016-04-21 13:07:48 [info] Test suite completed: 9 played,  all passed!
