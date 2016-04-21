@@ -57,9 +57,19 @@
 	<td>label=2XL</td>
 </tr>
 <tr>
+	<td>assertSelectedLabel</td>
+	<td>name=po[37]</td>
+	<td>2XL</td>
+</tr>
+<tr>
 	<td>select</td>
 	<td>name=quantity_in_cart</td>
-	<td>label=16</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=quantity_in_cart</td>
+	<td>3</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -108,28 +118,8 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Details</td>
+	<td>css=#ProductForm_15 &gt; div.product_img.pi-img-wrapper &gt; a &gt; img.img-responsive</td>
 	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>name=po[164]</td>
-	<td>label=Intel Core 2 Duo E8400 [+ $170]</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>name=po[165]</td>
-	<td>label=4GB DDR2 SDRAM [+ $69]</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>name=po[166]</td>
-	<td>label=750GB [+ $100]</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>name=quantity_in_cart</td>
-	<td>label=11</td>
 </tr>
 <tr>
 	<td>click</td>
