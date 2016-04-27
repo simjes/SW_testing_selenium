@@ -13,12 +13,32 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
+	<td>/4.7.9/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Computers']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td></td>
+	<td>url</td>
+</tr>
+<tr>
+	<td>open</td>
 	<td>/4.7.9/cart.php</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Continue Shopping</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>${url}</td>
 	<td></td>
 </tr>
 <tr>
@@ -66,7 +86,6 @@
 	<td>3000</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
